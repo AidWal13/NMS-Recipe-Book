@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+#bgVideo {
+    width: 100vw;
+    min-height: 100vh;
+    position:fixed;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+}
+@media screen and (max-width: 2060px) {
+    #bgVideo {
+        height: 100vh;
+        width: auto;
+    }
+}
+
+.overlay {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 50%;
+    z-index: -900;
+    top: 0;
+    left: 0;
+}
