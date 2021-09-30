@@ -12,6 +12,7 @@ body {color: white;}
     left: 0;
     z-index: -1000;
 }
+
 @media screen and (max-width: 2060px) {
     #bgVideo {
         height: 100vh;
@@ -28,4 +29,9 @@ body {color: white;}
     z-index: -900;
     top: 0;
     left: 0;
+}
+
+button:hover {
+    background: green;
+    color: navy;
 }
