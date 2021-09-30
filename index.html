@@ -12,17 +12,133 @@
     <video id="bgVideo" src="./Assets/Video/BackgroundVideo.mp4" muted loop autoplay></video>
     <div class="overlay"></div>
     <header>
-        <h1> Cwest For Credits</h1>
-        <h2>Can you Construct Thermic Condensate?</h2>
+        <h1>Quest For Credits</h1>
+        <h2>Can you Construct Stasis Modules?</h2>
     </header>
 
-    <main>
-        <h3>Condensed Carbon Count:</h3><input type="number" id="condCarbonCount" placeholder="50 Needed">
-        <h3>Sulphurine Count:</h3><input type="number" id="SulphurineCount" placeholder="250 Needed">
+    <div id="ingredientList">
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/dioxite.png" alt="dioxite element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Dioxite Count:</h3>
+                <input type="number" id="dioxiteCount" placeholder="50 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/phosphorus.png" alt="phosphorus element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Phosphorus Count:</h3>
+                <input type="number" id="phosphorusCount" placeholder="50 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/paraffinium.png" alt="paraffinium element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Paraffinium Count:</h3>
+                <input type="number" id="paraffiniumCount" placeholder="50 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/faecium.png" alt="faecium element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Faecium Count:</h3>
+                <input type="number" id="faeciumCount" placeholder="50 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/cactusFlesh.png" alt="Cactus Flesh element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Cactus Flesh Count:</h3>
+                <input type="number" id="cactusFleshCount" placeholder="100 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/frostCrystal.png" alt="Frost Crystal element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Frost Crystal Count:</h3>
+                <input type="number" id="frostCrystalCount" placeholder="140 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/ionizedCobalt.png" alt="Ionized Cobalt element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Ionized Cobalt Count:</h3>
+                <input type="number" id="ionizedCobaltCount" placeholder="100 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/starBulb.png" alt="Star Bulb element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Star Bulb Count:</h3>
+                <input type="number" id="starBulbCount" placeholder="200 Needed">
+            </div>
+        </section>
+
+        
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/solanium.png" alt="Solanium element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Solanium Count:</h3>
+                <input type="number" id="solaniumCount" placeholder="200 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/condensedCarbon.png" alt="Condensed Carbon element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Condensed Carbon Count:</h3>
+                <input type="number" id="condensedCarbonCount" placeholder="300 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/gammaRoot.png" alt="Gamma Root element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Gamma Root Count:</h3>
+                <input type="number" id="gammaRootCount" placeholder="400 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/radon.png" alt="Radon element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Radon Count:</h3>
+                <input type="number" id="radonCount" placeholder="500 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/sulphurine.png" alt="Sulphurine element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Sulphurine Count:</h3>
+                <input type="number" id="sulphurineCount" placeholder="500 Needed">
+            </div>
+        </section>
+
+        <section class="ingredientCard">
+            <img src="./Assets/Images/nitrogen.png" alt="Nitrogen element" class="ingredientImage">
+            <div class="sub-info">
+                <h3>Nitrogen Count:</h3>
+                <input type="number" id="nitrogenCount" placeholder="500 Needed">
+            </div>
+        </section>
+    </div>
 
         <button id="Evaluate" type="button">Evaluate</button>
 
-        <h2>Result: <span id="Result"></span></h2>
+        <h2>Result:</h2>
+        <div id="resultsArea">
+
+        </div>
     </main>
 
     <script type="text/javascript" src="script.js">require('script.js')</script>
