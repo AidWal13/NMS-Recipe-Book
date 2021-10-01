@@ -33,9 +33,9 @@ const userIngredients = {
 }
 
 function evaluate() {
-    clearBox('resultsArea');
+    clearBox('resultsArea'); //removes any previous results
 
-    let dioxiteCount = assignCountVariables("sulphurine"),
+    let dioxiteCount = assignCountVariables("dioxite"),
     phosphorusCount = assignCountVariables("phosphorus"),
     paraffiniumCount = assignCountVariables("paraffinium"),
     faeciumCount = assignCountVariables("faecium"),
@@ -68,9 +68,17 @@ function evaluate() {
     for (let ingredient in userIngredients) {
         if (userIngredients[ingredient] < StasisModuleRecipe[ingredient]) {
             let resultsArea = document.getElementById('resultsArea');
-
+console.log(`within Condition 1 for ${ingredient}`);
             const para = document.createElement("p");
             const node = document.createTextNode(`You need ${StasisModuleRecipe[ingredient] - userIngredients[ingredient]} more ${ingredient} to create a stasis module.`);
+            para.appendChild(node);
+ 
+            resultsArea.appendChild(para);
+        } else if (userIngredients[ingredient] >= StasisModuleRecipe[ingredient]) {
+            let resultsArea = document.getElementById('resultsArea');
+console.log(`within Condition 2 for ${ingredient}`);
+            const para = document.createElement("p");
+            const node = document.createTextNode(`You have enough ${ingredient} for ${Math.floor(userIngredients[ingredient] / StasisModuleRecipe[ingredient])} stasis modules.`);
             para.appendChild(node);
  
             resultsArea.appendChild(para);
@@ -78,8 +86,12 @@ function evaluate() {
     }
 }
 
+
+//ACTUALLY APPLYING THE FUNCTIONALITY
 let buttonEl = document.getElementById('Evaluate');
 buttonEl.onclick = evaluate;
+
+
 
 function assignCountVariables(element) {
     let elementCount = document.getElementById(`${element}Count`).value; //Now I have what the user has entered
@@ -90,10 +102,6 @@ function clearBox(elementID) {
     document.getElementById(`${elementID}`).innerText = "";
 }
 
-const thermicCondensateRecipe = {
-    condensedCarbon: 50,
-    sulphurine: 250
-}
 /*
 if (!sulphurineCount || !condCarbonCount) {
     result.innerHTML = "Please fill out how much you have of each element, even if it's 0";
