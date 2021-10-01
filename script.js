@@ -35,6 +35,9 @@ const userIngredients = {
 function evaluate() {
     clearBox('resultsArea'); //removes any previous results
 
+    const modulesCapableOfCreating = [];
+
+    //Retrieve what the user has entered
     let dioxiteCount = assignCountVariables("dioxite"),
     phosphorusCount = assignCountVariables("phosphorus"),
     paraffiniumCount = assignCountVariables("paraffinium"),
@@ -50,6 +53,7 @@ function evaluate() {
     sulphurineCount = assignCountVariables("sulphurine"),
     nitrogenCount = assignCountVariables("nitrogen");
 
+    //Assign userIngredients with the amounts entered by the user
     userIngredients.dioxite = dioxiteCount;
     userIngredients.phosphorus = phosphorusCount;
     userIngredients.paraffinium = paraffiniumCount;
@@ -64,6 +68,29 @@ function evaluate() {
     userIngredients.radon = radonCount;
     userIngredients.sulphurine = sulphurineCount;
     userIngredients.nitrogen = nitrogenCount;
+
+    //Figure out how many stasis modules you can make per each ingredient, push to the modulesCapableOfCreating array
+    modulesCapableOfCreating.push(amtOfProductsCapable("dioxite", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("phosphorus", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("paraffinium", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("faecium", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("cactusFlesh", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("frostCrystal", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("ionizedCobalt", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("starBulb", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("solanium", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("condensedCarbon", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("gammaRoot", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("radon", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("sulphurine", userIngredients, StasisModuleRecipe));
+    modulesCapableOfCreating.push(amtOfProductsCapable("nitrogen", userIngredients, StasisModuleRecipe));
+
+    let maxAmtOfModulesYouCanMake = Math.min(...modulesCapableOfCreating)
+    console.log(maxAmtOfModulesYouCanMake)
+
+    document.getElementById("resultSentence").style.display = "block";
+    document.getElementById("stasisModuleNumber").textContent = `${maxAmtOfModulesYouCanMake}`
+    
 
     for (let ingredient in userIngredients) {
         if (userIngredients[ingredient] < StasisModuleRecipe[ingredient]) {
@@ -91,7 +118,9 @@ console.log(`within Condition 2 for ${ingredient}`);
 let buttonEl = document.getElementById('Evaluate');
 buttonEl.onclick = evaluate;
 
-
+function amtOfProductsCapable(ingredient, pantry, recipe) {
+    return Math.floor(pantry[ingredient] / recipe[ingredient]);
+}
 
 function assignCountVariables(element) {
     let elementCount = document.getElementById(`${element}Count`).value; //Now I have what the user has entered
