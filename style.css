@@ -5,6 +5,10 @@
 
 body {color: white;}
 
+#resultSentence {
+    display: none;
+}
+
 #bgVideo {
     min-width: 100vw;
     min-height: 100%;
