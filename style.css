@@ -81,7 +81,16 @@ h3 {
     margin-right: 20px; 
 }
 
+button {
+    font-family: nasalization,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 150px;
+    height: 50px;
+}
+
 button:hover {
-    background: green;
-    color: navy;
+    background: black;
+    color:white;
+    border-color: red;
 }
